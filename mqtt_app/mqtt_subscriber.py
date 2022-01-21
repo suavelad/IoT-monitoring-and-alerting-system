@@ -17,6 +17,7 @@ MQTT_PORT = 1883
 MQTT_KEEPALIVE_INTERVAL = 45
 MQTT_TOPIC = "monitoring"
 
+email = input ('Kindly insert the admin email that will receive the alert below:\n')
 # subscribe to a Topic 
 def on_connect(client, userdata, flags, rc):
     mqttc.subscribe(MQTT_TOPIC,2)
@@ -41,7 +42,8 @@ def on_message(mosq, obj, msg):
         
         subject = f'SYSTEM MONITORING AND ALERT SYSTEM [{level}]'    
         message = f'Hi Admin, \nBelow is the status update of your IoT Device:\nDevice id: {payloadd["device_id"]}.\nAlert Level:  {level}\nMessage: Your device needs to be checked'
-        email= 'sunnexajayi@gmail.com'
+        # email= 'sunnexajayi@gmail.com'
+        
         to_list = [email]
         email_payload={
             "senders": to_list,
@@ -61,6 +63,7 @@ def on_message(mosq, obj, msg):
 def on_subscribe(mosq, obj, mid, granted_qos):
     print("Subscribed to Topic: " + 
     MQTT_TOPIC + " with QoS: " + str(granted_qos))
+    
 
 # Initiate MQTT Client
 mqttc = mqtt.Client()

@@ -17,4 +17,7 @@ WORKDIR /iot_logger
 ADD . /iot_logger/
 
 # Install any needed packages specified in requirements.txt
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
+
+# run the django server 
+CMD ["python","manage.py","runserver","0.0.0.0:8000"]
