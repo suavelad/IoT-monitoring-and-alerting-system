@@ -53,6 +53,8 @@ This Django application was built to creating api for
 
 3. Start the API Django Server 
    a. Without Docker
+      
+      - Activate the virtual environment
       - cd iot_logger
       - python manage.py runserver  (by default it uses the localhost as host and 8000 as port)
 
