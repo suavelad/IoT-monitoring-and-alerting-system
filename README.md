@@ -41,28 +41,28 @@ This Django application was built to creating api for
 
 
 1. Create a virtual environment in the main root directory  and install the pip files in the requirement file
-      -> virtualenv env
-      -> pip install -r requirement.txt
+      - virtualenv env
+      - pip install -r requirement.txt
 
 
 2. Run the Mqtt subscriber script 
-      -> Activate the virtual environment
-      -> cd mqtt_app
-      -> python mqtt_subscriber.py
+      - Activate the virtual environment
+      - cd mqtt_app
+      - python mqtt_subscriber.py
 
 
 3. Start the API Django Server 
    a. Without Docker
-      -> cd iot_logger
-      -> python manage.py runserver  (by default it uses the localhost as host and 8000 as port)
+      - cd iot_logger
+      - python manage.py runserver  (by default it uses the localhost as host and 8000 as port)
 
-      -> You can access the API documentation at http://localhost:8000/docs/
+      - You can access the API documentation at http://localhost:8000/docs/
 
    b. With Docker
-     -> docker-compose up --build
-     -> You can access the API documentation at http://localhost:8000/docs/
-     
+     - docker-compose up --build
+     - You can access the API documentation at http://localhost:8000/docs/
+
 4. Run the Mqtt publisher script
-      -> Activate the virtual environment
-      -> cd mqtt_app
-      -> python mqtt_publisher.py
+      - Activate the virtual environment
+      - cd mqtt_app
+      - python mqtt_publisher.py
